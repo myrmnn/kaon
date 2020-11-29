@@ -1,0 +1,481 @@
+@font-face {
+  font-family: JosephinSans;
+  src: url("../assets/JosefinSans-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: JosephinSans, sans-serif;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page {
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
+  -webkit-transition: 0.5s -webkit-transform ease;
+  transition: 0.5s -webkit-transform ease;
+  transition: 0.5s transform ease;
+  transition: 0.5s transform ease, 0.5s -webkit-transform ease;
+}
+
+.page.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+.entry-wrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.entry-img {
+  width: 50vw;
+}
+
+.border {
+  height: 100vh;
+  width: 15px;
+  background-color: silver;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.navigation {
+  margin-top: 100px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  z-index: 3;
+}
+
+.entry-navs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -15px;
+}
+
+.arrow {
+  width: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation: pulse infinite ease 4s;
+          animation: pulse infinite ease 4s;
+  border-radius: 50% 50%;
+  background: white;
+  height: 2rem;
+  width: 2rem;
+}
+
+.icon {
+  width: 50px;
+}
+
+.gov {
+  background-color: rgba(116, 114, 114, 0.8);
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  opacity: 0;
+  -webkit-animation: slideDown 1s ease forwards 0.5s;
+          animation: slideDown 1s ease forwards 0.5s;
+}
+
+.gov__title {
+  font-size: 2.4rem;
+  color: white;
+  margin-left: 76px;
+}
+
+.gov__icon {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.brand {
+  background-color: rgba(255, 255, 255, 0.89);
+  width: 35%;
+  height: 200px;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  opacity: 0;
+  -webkit-animation: slideDown 1s ease forwards;
+          animation: slideDown 1s ease forwards;
+}
+
+.brand__title {
+  font-size: 3rem;
+  color: gray;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.circle {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  bottom: 30px;
+  opacity: 0;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+}
+
+.circle__1 {
+  background-color: silver;
+  left: 20px;
+  -webkit-animation: appear 1s ease 1.8s forwards;
+          animation: appear 1s ease 1.8s forwards;
+}
+
+.circle__2 {
+  background-color: gray;
+  left: 72px;
+  z-index: 2;
+  -webkit-animation: appear 1s ease 2.3s forwards;
+          animation: appear 1s ease 2.3s forwards;
+}
+
+.circle__3 {
+  background-color: #b8cf94;
+  left: 123px;
+  -webkit-animation: appear 1s ease 2.8s forwards;
+          animation: appear 1s ease 2.8s forwards;
+}
+
+.circle__4 {
+  background-color: gray;
+  left: 173px;
+  -webkit-animation: appear 1s ease 3.3s forwards;
+          animation: appear 1s ease 3.3s forwards;
+}
+
+.health {
+  background-color: rgba(116, 114, 114, 0.8);
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  opacity: 0;
+  -webkit-animation: slideDown 1s ease forwards 0.5s;
+          animation: slideDown 1s ease forwards 0.5s;
+}
+
+.health__title {
+  font-size: 2.4rem;
+  color: white;
+  margin-right: 90px;
+}
+
+.arrow-nav {
+  cursor: pointer;
+  position: absolute;
+  height: 100px;
+  width: 110px;
+  background: #8d8d8d;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.arrow-nav-gov1 {
+  top: 5%;
+  right: 0;
+}
+
+.arrow-nav-health {
+  top: 5%;
+  left: 0;
+}
+
+.gov-bg,
+.health-bg {
+  height: 100vh;
+  width: 100vw;
+}
+
+.explore {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 300px;
+  background: #8d8d8d;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 75%;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.explore::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation: pulse infinite ease 4s;
+          animation: pulse infinite ease 4s;
+  border-radius: 50%;
+  background: white;
+  height: 2rem;
+  width: 2rem;
+}
+
+.gov1-options {
+  position: absolute;
+  background: #8d8d8d;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  font-size: 3rem;
+  color: white;
+  height: 300px;
+  width: 400px;
+  padding: 10px 0;
+}
+
+.gov1-options ul {
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.gov1-options li {
+  margin: 0 auto;
+  list-style: none;
+  padding: 15px 0;
+  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.gov1-options li:before {
+  content: "";
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(184, 207, 148, 0.4)));
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, rgba(184, 207, 148, 0.4) 50%);
+  background-size: 210% 100%;
+  background-position: right bottom;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.gov1-options li:hover:before {
+  background-position: left bottom;
+}
+
+.gov1-options li:not(:last-of-type) {
+  border-bottom: 2px solid white;
+}
+
+.health-nav {
+  position: absolute;
+  top: 0;
+  background: #8d8d8d;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.option {
+  background: #4d4d4d;
+  color: #333;
+  position: absolute;
+  text-align: center;
+  top: 25px;
+  font-size: 2rem;
+  color: white;
+  height: 50px;
+  min-width: 200px;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  cursor: pointer;
+}
+
+.option:hover {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.option:after {
+  border: 0.5em solid transparent;
+  border-top-color: #4d4d4d;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.option-a {
+  left: 23%;
+  top: 20%;
+}
+
+.option-b {
+  left: 53%;
+  top: 33%;
+}
+
+.option__title {
+  margin-top: 10px;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(5);
+            transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(5);
+            transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */
