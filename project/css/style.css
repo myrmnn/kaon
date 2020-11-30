@@ -10,62 +10,93 @@ body {
   overflow: hidden;
 }
 
-.page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.page {
-  -webkit-transform: translate(-100%);
-          transform: translate(-100%);
-  -webkit-transition: 0.5s -webkit-transform ease;
-  transition: 0.5s -webkit-transform ease;
-  transition: 0.5s transform ease;
-  transition: 0.5s transform ease, 0.5s -webkit-transform ease;
-}
-
-.page.active {
-  -webkit-transform: translate(0);
-          transform: translate(0);
-}
-
 .entry-wrapper {
   height: 100vh;
   width: 100%;
   position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (min-width: 1111px) {
+  .entry-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .entry-img {
-  width: 50vw;
+  width: 100vw;
+  height: 50vh;
+}
+
+@media screen and (min-width: 1111px) {
+  .entry-img {
+    height: 100vh;
+    width: 50vw;
+  }
 }
 
 .border {
-  height: 100vh;
-  width: 15px;
+  height: 15px;
+  width: 100vw;
   background-color: silver;
   position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 50%;
+}
+
+@media screen and (min-width: 1111px) {
+  .border {
+    width: 15px;
+    height: 100vh;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
 
 .navigation {
-  margin-top: 100px;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  height: 100vh;
   z-index: 3;
+}
+
+@media screen and (min-width: 1111px) {
+  .navigation {
+    margin-top: -150px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .entry-navs {
@@ -75,18 +106,31 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: -15px;
 }
 
 .arrow {
-  width: 50px;
+  width: 200px;
+  height: 100px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .arrow::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -104,7 +148,8 @@ body {
 
 .gov {
   background-color: rgba(116, 114, 114, 0.8);
-  width: 25%;
+  width: 300px;
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,20 +157,21 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 15px;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
   -webkit-transform: translateY(-15px);
           transform: translateY(-15px);
   opacity: 0;
-  -webkit-animation: slideDown 1s ease forwards 0.5s;
-          animation: slideDown 1s ease forwards 0.5s;
+  padding: 15px;
+  -webkit-animation: slideDown 2s ease-in forwards 2s;
+          animation: slideDown 2s ease-in forwards 2s;
+  -ms-flex-item-align: start;
+      align-self: start;
 }
 
 .gov__title {
   font-size: 2.4rem;
   color: white;
-  margin-left: 76px;
 }
 
 .gov__icon {
@@ -133,9 +179,23 @@ body {
       align-self: flex-end;
 }
 
+@media screen and (min-width: 1111px) {
+  .gov {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .gov {
+    width: 25%;
+  }
+}
+
 .brand {
   background-color: rgba(255, 255, 255, 0.89);
-  width: 35%;
+  width: 400px;
   height: 200px;
   position: relative;
   -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
@@ -143,8 +203,15 @@ body {
   -webkit-transform: translateY(-15px);
           transform: translateY(-15px);
   opacity: 0;
-  -webkit-animation: slideDown 1s ease forwards;
-          animation: slideDown 1s ease forwards;
+  -webkit-animation: slideDown 2s ease-in forwards;
+          animation: slideDown 2s ease-in forwards;
+  padding: 15px;
+}
+
+@media screen and (min-width: 1350px) {
+  .brand {
+    width: 33%;
+  }
 }
 
 .brand__title {
@@ -161,42 +228,43 @@ body {
   border-radius: 50%;
   bottom: 30px;
   opacity: 0;
-  -webkit-transform: scale(0.85);
-          transform: scale(0.85);
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .circle__1 {
   background-color: silver;
   left: 20px;
-  -webkit-animation: appear 1s ease 1.8s forwards;
-          animation: appear 1s ease 1.8s forwards;
+  -webkit-animation: appear 2s ease-in 2.8s forwards;
+          animation: appear 2s ease-in 2.8s forwards;
 }
 
 .circle__2 {
   background-color: gray;
   left: 72px;
   z-index: 2;
-  -webkit-animation: appear 1s ease 2.3s forwards;
-          animation: appear 1s ease 2.3s forwards;
+  -webkit-animation: appear 2s ease-in 3.8s forwards;
+          animation: appear 2s ease-in 3.8s forwards;
 }
 
 .circle__3 {
   background-color: #b8cf94;
   left: 123px;
-  -webkit-animation: appear 1s ease 2.8s forwards;
-          animation: appear 1s ease 2.8s forwards;
+  -webkit-animation: appear 2s ease-in 4.3s forwards;
+          animation: appear 2s ease-in 4.3s forwards;
 }
 
 .circle__4 {
   background-color: gray;
   left: 173px;
-  -webkit-animation: appear 1s ease 3.3s forwards;
-          animation: appear 1s ease 3.3s forwards;
+  -webkit-animation: appear 2s ease-in 5.4s forwards;
+          animation: appear 2s ease-in 5.4s forwards;
 }
 
 .health {
   background-color: rgba(116, 114, 114, 0.8);
-  width: 25%;
+  width: 300px;
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,14 +278,36 @@ body {
   -webkit-transform: translateY(-15px);
           transform: translateY(-15px);
   opacity: 0;
-  -webkit-animation: slideDown 1s ease forwards 0.5s;
-          animation: slideDown 1s ease forwards 0.5s;
+  -webkit-animation: slideDown 2s ease-in forwards 2s;
+          animation: slideDown 2s ease-in forwards 2s;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .health__title {
   font-size: 2.4rem;
   color: white;
-  margin-right: 90px;
+}
+
+@media screen and (min-width: 1111px) {
+  .health {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .health {
+    width: 25%;
+  }
+}
+
+.government {
+  background-image: url("../assets/gov_bg.png");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
 }
 
 .arrow-nav {
@@ -281,7 +371,7 @@ body {
 }
 
 .explore::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -309,17 +399,24 @@ body {
           align-items: center;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   font-size: 3rem;
   color: white;
   height: 300px;
   width: 400px;
-  padding: 10px 0;
+  padding: 23px;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.gov1-options.show {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 
 .gov1-options ul {
@@ -331,7 +428,7 @@ body {
 .gov1-options li {
   margin: 0 auto;
   list-style: none;
-  padding: 15px 0;
+  padding: 10px 0;
   width: 100%;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -340,7 +437,7 @@ body {
 }
 
 .gov1-options li:before {
-  content: "";
+  content: '';
   background: -webkit-gradient(linear, right top, left top, color-stop(50%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(184, 207, 148, 0.4)));
   background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, rgba(184, 207, 148, 0.4) 50%);
   background-size: 210% 100%;
@@ -362,6 +459,13 @@ body {
 
 .gov1-options li:not(:last-of-type) {
   border-bottom: 2px solid white;
+}
+
+.healthcare {
+  background-image: url("../assets/hc_bg.png");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
 }
 
 .health-nav {
@@ -397,7 +501,7 @@ body {
 .option:after {
   border: 0.5em solid transparent;
   border-top-color: #4d4d4d;
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 0;
@@ -408,17 +512,23 @@ body {
 }
 
 .option-a {
-  left: 23%;
-  top: 20%;
+  left: 10%;
+  top: 22%;
+}
+
+@media screen and (min-width: 1000px) {
+  .option-a {
+    left: 25%;
+  }
 }
 
 .option-b {
-  left: 53%;
-  top: 33%;
+  left: 55%;
+  top: 35%;
 }
 
 .option__title {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 @-webkit-keyframes pulse {
@@ -428,8 +538,8 @@ body {
     opacity: 0.5;
   }
   100% {
-    -webkit-transform: translate(-50%, -50%) scale(5);
-            transform: translate(-50%, -50%) scale(5);
+    -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
     opacity: 0;
   }
 }
@@ -441,8 +551,8 @@ body {
     opacity: 0.5;
   }
   100% {
-    -webkit-transform: translate(-50%, -50%) scale(5);
-            transform: translate(-50%, -50%) scale(5);
+    -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
     opacity: 0;
   }
 }
@@ -477,5 +587,27 @@ body {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page {
+  -webkit-transform: translate(-100%);
+          transform: translate(-100%);
+  -webkit-transition: 0.5s -webkit-transform ease;
+  transition: 0.5s -webkit-transform ease;
+  transition: 0.5s transform ease;
+  transition: 0.5s transform ease, 0.5s -webkit-transform ease;
+}
+
+.page.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
 }
 /*# sourceMappingURL=style.css.map */
